@@ -5,7 +5,7 @@ Simulates a 5-card-stud poker game and determines the winning hand(s)
 import random
 
 ranks = '23456789TJQKA'
-suits = 'SHDC'
+suits = '♥♣◆♠' # add some images for fun 
 deck = [r+s for r in ranks for s in suits] 
 hand_types = {
     8:"Straight flush!", 7:"4 of a kind!",
@@ -77,7 +77,7 @@ def hand_rank(hand):
         return (4, max(ranks))
     elif kind(3, ranks):
         return (3, kind(3, ranks), ranks)
-    elif two_pair(hand):
+    elif two_pair(ranks):
         return (2, two_pair(ranks), ranks)
     elif kind(2, ranks):
         return (1, kind(2, ranks), ranks)
@@ -104,9 +104,10 @@ def deal(numhands, n=5, deck=deck):
     random.shuffle(deck)
     return [deck[i:i+n] for i in range(0, n*numhands, n)]
 
-# Tests to make sure everything is running
 def test():
-    "Test cases for the functions in poker program"
+    """
+    Test cases for the functions in poker program
+    """
     sf = "6C 7C 8C 9C TC".split() # Straight Flush
     fk = "9D 9H 9S 9C 7D".split() # Four of a Kind
     fh = "TD TC TH 7C 7D".split() # Full House
@@ -120,38 +121,46 @@ def test():
     assert hand_rank(fh) == (6, 10, 7)
     return 'tests pass'
 
-test()
+def main():
+    """
+    Runs tests and two simualtions.
+    """
+    # Tests to make sure everything is running
+    test()
 
-# Simulate 5 games of 5-card stud with 10 players in each game
-for game in range(1, 5):
-    print("Game {}:".format(game))
-    hands = deal(10)
-    print("Hands Dealt:")
-    for hand in hands:
-        print(hand)
-    winner = poker(hands)
-    hand_type = hand_rank(winner[0])[0]
-    if len(winner) > 1:
-        print("\nWe have a {} way tie Winner! \n{}:\n{}\n".format(
-            len(winner), hand_types[hand_type], winner))
-    else:       
-        print("\nWinner! \n{}:\n{}\n".format(
-            hand_types[hand_type], winner))
-    print("-"*60)
-
-# for fun, see how many games it takes to have a tie (limit 10,000 games)
-prnt_statement = False
-for game in range(10_000):
-    hands = deal(10)
-    winner = poker(hands)
-    if len(winner) > 1:
+    # Simulate 5 games of 5-card stud with 10 players in each game
+    for game in range(1, 5):
+        print("Game {}:".format(game))
+        hands = deal(10)
+        print("Hands Dealt:")
+        for hand in hands:
+            print(hand)
+        winner = poker(hands)
         hand_type = hand_rank(winner[0])[0]
-        print("We have a {} way tie! \n{}:\n{}\n".format(
-            len(winner), hand_types[hand_type], winner))       
-        print("It only took {} games to have a tie!".format(game+1))
-        prnt_statement = True
-        break
+        if len(winner) > 1:
+            print("\nWe have a {} way tie Winner! \n{}:\n{}\n".format(
+                len(winner), hand_types[hand_type], winner))
+        else:       
+            print("\nWinner! \n{}:\n{}\n".format(
+                hand_types[hand_type], winner))
+        print("-"*60)
 
-if not prnt_statement:
-    print("No ties for 10,000 iterations!")
+    # for fun, see how many games it takes to have a tie (limit 10,000 games)
+    prnt_statement = False
+    for game in range(10_000):
+        hands = deal(10)
+        winner = poker(hands)
+        if len(winner) > 1:
+            hand_type = hand_rank(winner[0])[0]
+            print("We have a {} way tie! \n{}:\n{}\n".format(
+                len(winner), hand_types[hand_type], winner))       
+            print("It only took {} games to have a tie!".format(game+1))
+            prnt_statement = True
+            break
+
+    if not prnt_statement:
+        print("No ties for 10,000 iterations!")
+        
+if __name__ == "__main__":
+    main()
         
