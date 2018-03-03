@@ -8,6 +8,8 @@
     
 - [5_card_stud_tests.ipynb](5_card_stud_tests.ipynb) explores all possible combinations of 5-card hands from a 52-card deck (Combinatorics).  
     + Introduces Recursion and Dynamic Programming. 
+    
+- [poker_refactored.py](poker_refactored.py) as the name suggests refactors [poker.py](poker.py).
 
 
 ![](../images/a_friend_in_need.jpg?raw=true)
