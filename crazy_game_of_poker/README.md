@@ -13,11 +13,12 @@
 
 - [seven_card_stud.py](seven_card_stud.py). The first of three 7-card poker game scripts.  This was a homework assignment from a refersher cs212 course on udacity.  This one, as well as the python scripts above, were half inspired by the course. The ipython notebooks and scripts below are soley my own.
 
-- [hold_em.py](hold_em.py). Texas Hold-em.  A very popular variation of poker where players recive two cards and build a best 5-card hand from their two hidden cards and five communal cards.
+- [hold_em.py](hold_em.py). Texas Hold 'em.  A very popular variation of poker where players recive two cards and build a best 5-card hand from their two hidden cards and five communal cards.
 
-- [utils7card.py](utils7card.py).  Since hold-em and seven-card stud both create their best 5-card hand from 7 cards, utils7card is a modular approach for reusability. 
+- [utils7card.py](utils7card.py).  Since hold 'em and 7-card stud both create their best 5-card hand from 7 cards, utils7card is a modular approach for reusability. 
 
-- [7card_poker_tests](7card_poker_tests).  Continuing probability with poker.   Probability Distributions of possible handranks and winning hands for the three poker games above.  
+- [poker_tests](7card_poker_tests).  Continuing probability with poker.   Probability Distributions of possible handranks and winning hands for the three poker games above.  
+![](../images/winning_hands.png?raw=true)
 
 ![](../images/a_friend_in_need.jpg?raw=true)
 - http://www.raandrade.com/dogs-playing-poker/
