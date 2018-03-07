@@ -21,7 +21,7 @@ def communal_cards(remaining_deck):
 def deal_holdem(numhands, n=2, deck=deck):
     '''
     Deal `numhands` of `n` cards from a shuffled `deck`
-    Return the communal cards, and a list of unique hands.
+    Return a list of unique hands, and list of the communal cards.
     '''
     # check to see there are enough cards in the deck 
     # to deal `numhands` 
