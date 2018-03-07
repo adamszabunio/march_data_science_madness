@@ -17,7 +17,7 @@
 
 - [utils7card.py](utils7card.py).  Since hold 'em and 7-card stud both create their best 5-card hand from 7 cards, utils7card is a modular approach for reusability. 
 
-- [poker_tests](7card_poker_tests).  Continuing probability with poker.   Probability Distributions of possible handranks and winning hands for the three poker games above.  
+- [poker_tests](poker_tests.ipynb).  Continuing probability with poker.   Probability Distributions of possible handranks and winning hands for the three poker games above.  
 ![](../images/winning_hands.png?raw=true)
 
 ![](../images/a_friend_in_need.jpg?raw=true)
